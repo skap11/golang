@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // decSize := 20
 // var decSize int
 
@@ -12,16 +14,15 @@ package main
 // }
 
 func main() {
-	cards := deck{"Ace of Diamonds", newCard()}
-	cards = append(cards, "Six of Spades")
+	// cards := newDeck()
+	// cards.print()
 
-	// for i, card := range cards {
-	// 	fmt.Println(i, card)
-	// }
-	// printState()
-	cards.print()
+	c := color("Red")
+	fmt.Println(c.describe("is a wonderful color"))
 }
 
-func newCard() string {
-	return "Five of Diamonds"
+type color string
+
+func (c color) describe(description string) string {
+	return string(c) + " " + description
 }
