@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // decSize := 20
 // var decSize int
 
@@ -15,14 +13,14 @@ import "fmt"
 
 func main() {
 	// cards := newDeck()
-	// cards.print()
+	// cards.saveToFile("mycards")
+	cards := readDeckFromFile("my")
+	cards.print()
 
-	c := color("Red")
-	fmt.Println(c.describe("is a wonderful color"))
 }
 
-type color string
+// type color string
 
-func (c color) describe(description string) string {
-	return string(c) + " " + description
-}
+// func (c color) describe(description string) string {
+// 	return string(c) + " " + description
+// }
