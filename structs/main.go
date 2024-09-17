@@ -22,7 +22,19 @@ func main() {
 
 	// Print struct fields along with value
 	jalex.print()
-	jalexPointer := &jalex
-	jalexPointer.updateName("Alex")
+	// jalexPointer := &jalex
+	// jalexPointer.updateName("Alex")
+	jalex.updateName("Alex")
 	jalex.print()
+
+	name := "Bill"
+	// Even the pointers are passed by value to a function - It's like a separate pointer object gets created
+	// pointer to the same value
+	namePointer := &name
+	fmt.Println("namePointer", &namePointer)
+	printPointer(namePointer)
+}
+
+func printPointer(namePointer *string) {
+	fmt.Println("Name pointer in function", &namePointer)
 }
