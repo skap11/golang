@@ -19,5 +19,6 @@ func (p person) print() {
 }
 
 func (p *person) updateName(newFirstName string) {
-	(*p).firstName = newFirstName
+	// Go automatically dereferences p to access the firstName field of the person struct.
+	p.firstName = newFirstName
 }
